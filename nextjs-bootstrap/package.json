@@ -1,0 +1,31 @@
+{
+  "name": "nextjs-bootstrap",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@types/react-bootstrap": "^0.32.37",
+    "bootstrap": "^5.3.3",
+    "bootstrap-icons": "^1.11.3",
+    "generate-react-cli": "^8.4.9",
+    "next": "15.1.0",
+    "react": "^19.0.0",
+    "react-bootstrap": "^2.10.6",
+    "react-dom": "^19.0.0",
+    "sass": "^1.82.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "15.1.0",
+    "typescript": "^5"
+  }
+}

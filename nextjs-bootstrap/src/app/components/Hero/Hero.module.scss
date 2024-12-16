@@ -1,0 +1,132 @@
+// src/components/Hero/Hero.module.scss
+@use "sass:color";
+
+$primary-color: #007bff;
+$text-color: #333;
+$mobile-breakpoint: 768px;
+
+.hero {
+  position: relative;
+  padding: 6rem 0;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  overflow: hidden;
+
+  @media (max-width: $mobile-breakpoint) {
+    padding: 4rem 0;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background: url('/images/pattern.svg') repeat;
+    opacity: 0.1;
+    animation: float 20s linear infinite;
+  }
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+}
+
+.title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  color: $text-color;
+
+  @media (max-width: $mobile-breakpoint) {
+    font-size: 2.5rem;
+  }
+
+  span {
+    color: $primary-color;
+  }
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: color.adjust($text-color, $lightness: 20%);
+  margin-bottom: 2rem;
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+.cta_group {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+
+  @media (max-width: $mobile-breakpoint) {
+    flex-direction: column;
+  }
+}
+
+.primary_button {
+  padding: 0.75rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  background-color: $primary-color;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: color.adjust($primary-color, $lightness: -10%);
+    transform: translateY(-2px);
+  }
+}
+
+.secondary_button {
+  padding: 0.75rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  background-color: transparent;
+  color: $primary-color;
+  border: 2px solid $primary-color;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: color.adjust($primary-color, $alpha: -0.9);
+    transform: translateY(-2px);
+  }
+}
+
+.features {
+  display: flex;
+  gap: 2rem;
+  margin-top: 3rem;
+
+  @media (max-width: $mobile-breakpoint) {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: color.adjust($text-color, $lightness: 20%);
+
+  i {
+    color: $primary-color;
+    font-size: 1.25rem;
+  }
+}
+
+@keyframes float {
+  from {
+    transform: translateY(0) rotate(0deg);
+  }
+  to {
+    transform: translateY(-100%) rotate(10deg);
+  }
+}

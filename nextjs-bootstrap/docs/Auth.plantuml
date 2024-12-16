@@ -1,0 +1,32 @@
+@startuml
+!define RECTANGLE class
+
+RECTANGLE FrontEndApp {
+    :React Application:
+    :Displays Login Form:
+    :Handles JWT Tokens:
+}
+
+RECTANGLE UserManagementService {
+    :Node.js & Express.js:
+    :Handles User Authentication:
+    :Communicates with MongoDB:
+}
+
+RECTANGLE ApiGateway {
+    :Express.js:
+    :Routes Requests:
+    :Load Balancing (Optional):
+}
+
+RECTANGLE MongoDB {
+    :Stores User Credentials:
+    :Used by User Management Service:
+}
+
+FrontEndApp --> ApiGateway : "Sends Login Requests"
+ApiGateway --> UserManagementService : "Routes Requests"
+UserManagementService --> MongoDB : "Queries User Data"
+UserManagementService --> FrontEndApp : "Returns JWT on Successful Login"
+
+@enduml

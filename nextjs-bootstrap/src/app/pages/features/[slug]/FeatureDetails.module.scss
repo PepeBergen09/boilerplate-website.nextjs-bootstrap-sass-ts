@@ -1,0 +1,122 @@
+
+// src/app/features/[slug]/FeatureDetails.module.scss
+@use "sass:color";
+
+$primary-color: #007bff;
+$text-color: #333;
+$mobile-breakpoint: 768px;
+
+.feature_details {
+  .feature_hero {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 5rem 0;
+    margin-bottom: 3rem;
+  }
+
+  .feature_header {
+    .feature_icon {
+      font-size: 3rem;
+      color: $primary-color;
+      margin-bottom: 1.5rem;
+    }
+
+    h1 {
+      font-size: 3rem;
+      color: $text-color;
+      margin-bottom: 1.5rem;
+
+      @media (max-width: $mobile-breakpoint) {
+        font-size: 2.5rem;
+      }
+    }
+
+    p {
+      font-size: 1.25rem;
+      color: color.adjust($text-color, $lightness: 20%);
+    }
+  }
+
+  .feature_content {
+    padding-bottom: 5rem;
+  }
+
+  .benefits_section {
+    margin-bottom: 3rem;
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  .benefits_list {
+    list-style: none;
+    padding: 0;
+
+    li {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+
+      i {
+        color: $primary-color;
+      }
+    }
+  }
+
+  .tech_specs {
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  .specs_grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .spec_item {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+
+    h3 {
+      font-size: 1.1rem;
+      color: color.adjust($text-color, $lightness: 20%);
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: $text-color;
+      margin: 0;
+    }
+  }
+
+  .feature_sidebar {
+    position: sticky;
+    top: 2rem;
+  }
+
+  .cta_card {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+
+    h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      color: color.adjust($text-color, $lightness: 20%);
+      margin-bottom: 1.5rem;
+    }
+  }
+}

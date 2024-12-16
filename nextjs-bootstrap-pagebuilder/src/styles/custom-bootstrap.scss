@@ -1,0 +1,19 @@
+// src/styles/custom-bootstrap.scss
+// Custom Bootstrap variable overrides
+$primary: #0066cc;
+$secondary: #6c757d;
+$success: #28a745;
+$info: #17a2b8;
+$warning: #ffc107;
+$danger: #dc3545;
+$light: #f8f9fa;
+$dark: #343a40;
+
+// Import Bootstrap styles
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+// Custom styles that depend on Bootstrap
+.btn-custom {
+  @extend .btn;
+  // Add custom button styles here
+}

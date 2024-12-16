@@ -1,0 +1,149 @@
+// src/components/CTA/CTA.module.scss
+@use "sass:color";
+
+$primary-color: #007bff;
+$text-color: #333;
+$mobile-breakpoint: 768px;
+
+.cta {
+  padding: 6rem 0;
+  background: linear-gradient(135deg, $primary-color 0%, color.adjust($primary-color, $lightness: -20%) 100%);
+  position: relative;
+  overflow: hidden;
+
+  @media (max-width: $mobile-breakpoint) {
+    padding: 4rem 0;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('/images/pattern.svg') repeat;
+    opacity: 0.1;
+    animation: float 20s linear infinite;
+  }
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.title {
+  color: white;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+
+  @media (max-width: $mobile-breakpoint) {
+    font-size: 2.25rem;
+  }
+}
+
+.description {
+  color: color.adjust(white, $alpha: -0.1);
+  font-size: 1.25rem;
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+
+  @media (max-width: $mobile-breakpoint) {
+    font-size: 1.1rem;
+  }
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width: $mobile-breakpoint) {
+    flex-direction: column;
+  }
+}
+
+.primary_button {
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: $primary-color;
+  background-color: white;
+  border: none;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    background-color: color.adjust(white, $lightness: -5%);
+  }
+
+  i {
+    transition: transform 0.3s ease;
+  }
+
+  &:hover i {
+    transform: translateX(4px);
+  }
+}
+
+.secondary_button {
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: color.adjust(white, $alpha: -0.9);
+    transform: translateY(-2px);
+  }
+}
+
+.features {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-top: 3rem;
+
+  @media (max-width: $mobile-breakpoint) {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: white;
+
+  i {
+    font-size: 1.25rem;
+  }
+}
+
+@keyframes float {
+  from {
+    transform: translateY(0) rotate(0deg);
+  }
+  to {
+    transform: translateY(-100%) rotate(10deg);
+  }
+}

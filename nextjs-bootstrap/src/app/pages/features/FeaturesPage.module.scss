@@ -1,0 +1,34 @@
+// src/app/features/FeaturesPage.module.scss
+@use "sass:color";
+
+$primary-color: #007bff;
+$text-color: #333;
+$mobile-breakpoint: 768px;
+
+.features_page {
+  .features_hero {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 5rem 0;
+    margin-bottom: 2rem;
+
+    h1 {
+      font-size: 3rem;
+      color: $text-color;
+      margin-bottom: 1.5rem;
+
+      @media (max-width: $mobile-breakpoint) {
+        font-size: 2.5rem;
+      }
+    }
+
+    p {
+      font-size: 1.25rem;
+      color: color.adjust($text-color, $lightness: 20%);
+    }
+  }
+
+  .features_comparison {
+    padding: 5rem 0;
+    background-color: #fff;
+  }
+}

@@ -1,0 +1,86 @@
+// src/components/Footer/Footer.module.scss
+@use "sass:color";
+
+$primary-color: #007bff;
+$footer-bg: #f8f9fa;
+$text-color: #333;
+$mobile-breakpoint: 768px;
+
+.footer {
+  background-color: $footer-bg;
+  padding: 3rem 0;
+  margin-top: auto;  // This helps keep footer at bottom
+
+  .footer_content {
+    @media (max-width: $mobile-breakpoint) {
+      text-align: center;
+    }
+  }
+
+  .footer_section {
+    margin-bottom: 2rem;
+
+    @media (max-width: $mobile-breakpoint) {
+      margin-bottom: 3rem;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .footer_title {
+    color: $text-color;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1.25rem;
+  }
+
+  .footer_list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      margin-bottom: 0.75rem;
+    }
+  }
+
+  .footer_link {
+    color: color.adjust($text-color, $lightness: 20%);
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+
+  .social_links {
+    display: flex;
+    gap: 1rem;
+    
+    @media (max-width: $mobile-breakpoint) {
+      justify-content: center;
+    }
+  }
+
+  .social_icon {
+    color: color.adjust($text-color, $lightness: 20%);
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+
+  .copyright {
+    text-align: center;
+    padding-top: 2rem;
+    margin-top: 2rem;
+    border-top: 1px solid color.adjust($text-color, $alpha: -0.9);
+    color: color.adjust($text-color, $lightness: 20%);
+  }
+}
+
